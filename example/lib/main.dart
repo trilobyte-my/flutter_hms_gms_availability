@@ -9,7 +9,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool gms, hms;
+  bool gms = false, hms = false;
 
   @override
   void initState() {
