@@ -9,7 +9,7 @@ https://medium.com/huawei-developers/flutter-check-hms-gms-availability-10f06aee
 
 ## Example
 
-```
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutter_hms_gms_availability/flutter_hms_gms_availability.dart';
 
@@ -21,7 +21,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool gms, hms;
+  bool gms = false, hms = false;
 
   @override
   void initState() {
