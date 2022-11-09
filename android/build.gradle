@@ -43,6 +43,6 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.huawei.hms:hwid:4.0.0.300"
+    implementation "com.huawei.hms:hwid:6.4.0.301"
     implementation "com.google.android.gms:play-services-base:17.3.0"
 }
