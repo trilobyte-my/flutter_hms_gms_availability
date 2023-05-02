@@ -48,10 +48,10 @@ public class FlutterHmsGmsAvailabilityPlugin : FlutterPlugin, MethodCallHandler 
 
   private fun isGmsAvailable(): Boolean {
     var isAvailable = false
-    if (null != context) {
-        val result: Int = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(context)
-        isAvailable = com.google.android.gms.common.ConnectionResult.SUCCESS === result
-    }
+    
+    val result: Int? = context?.let { GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(it) }
+    isAvailable = com.google.android.gms.common.ConnectionResult.SUCCESS === result
+    
     return isAvailable
   }
 }
