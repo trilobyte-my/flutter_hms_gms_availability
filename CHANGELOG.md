@@ -1,3 +1,7 @@
+## 3.7.0
+
+- Update to support Flutter 3.7.0
+
 ## 3.0.0
 
 - Update Huawei Services SDK to 6.4.0.301 to be compliant with Google's policy.

@@ -1,6 +1,6 @@
 name: flutter_hms_gms_availability
 description: Flutter plugin to detect HMS and GMS availability. Always return False in iOS.
-version: 3.0.0
+version: 3.7.0
 homepage: https://github.com/trilobyte-my/flutter_hms_gms_availability
 
 environment:
