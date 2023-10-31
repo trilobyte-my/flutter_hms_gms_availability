@@ -8,16 +8,24 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() {
-    channel.setMockMethodCallHandler((MethodCall methodCall) async {
-      return '42';
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+        .setMockMethodCallHandler(channel, (MethodCall methodCall) async {
+      switch (methodCall.method) {
+        case 'isGmsAvailable':
+          return true;
+        case 'isHmsAvailable':
+          return false;
+        default:
+          throw MissingPluginException();
+      }
     });
   });
 
-  tearDown(() {
-    channel.setMockMethodCallHandler(null);
+  test('isHmsAvailable', () async {
+    expect(await FlutterHmsGmsAvailability.isHmsAvailable, false);
   });
 
-  test('getPlatformVersion', () async {
-    expect(await FlutterHmsGmsAvailability.platformVersion, '42');
+  test('isGmsAvailable', () async {
+    expect(await FlutterHmsGmsAvailability.isGmsAvailable, true);
   });
 }
